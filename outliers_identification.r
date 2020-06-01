@@ -114,3 +114,18 @@ hist(Glass$Ca, breaks = "sturges",
      ylab = "Cantidad",
      col="olivedrab1",
      border="black")
+
+# Analizando la distribución de la variable Bario
+
+# Resumen de la variable Bario
+summary(Glass$Ba)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.000   0.000   0.000   0.175   0.000   3.150
+
+# Visualizamos distribución de la variable Bario
+hist(Glass$Ba, breaks = "sturges",
+     main = "Gráfico N° 7: Distribución de la variable Bario",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="seagreen1",
+     border="black")
