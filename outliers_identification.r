@@ -38,3 +38,19 @@ hist(Glass$Na, breaks = "sturges",
      col="plum", 
      border="black"
 )
+
+# Analizando la distribución de la variable Magnesio
+
+# Resumen de la variable magnesio
+summary(Glass$Mg)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.000   2.115   3.480   2.685   3.600   4.490 
+
+# Visualizamos distribución de la variable Magnesio
+hist(Glass$Mg, breaks = "sturges",
+     main = "Gráfico N° 2: Distribución de la variable Magnesio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="springgreen",
+     border="black"
+)
