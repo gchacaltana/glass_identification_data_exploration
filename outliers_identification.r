@@ -145,3 +145,90 @@ hist(Glass$Fe, breaks = "sturges",
      ylab = "Cantidad",
      col="tomato",
      border="black")
+
+# Creamos la función para identificar outliers
+is_outlier <- function(x) {
+  return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
+}
+
+# Creamos las variables segmentados por tipo
+p1 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Na), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Na)) +
+  geom_boxplot(fill="plum") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p2 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Mg), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Mg)) +
+  geom_boxplot(fill="springgreen") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p3 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Al), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Al)) +
+  geom_boxplot(fill="wheat3") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p4 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Si), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Si)) +
+  geom_boxplot(fill="mistyrose") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p5 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(K), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = K)) +
+  geom_boxplot(fill="mediumpurple1") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p6 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Ca), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Ca)) +
+  geom_boxplot(fill="olivedrab1") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p7 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Ba), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Ba)) +
+  geom_boxplot(fill="seagreen1") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+p8 <- Glass %>%
+  group_by(Type) %>%
+  mutate(outlier = ifelse(is_outlier(Fe), RI, as.numeric(NA))) %>%
+  ggplot(., aes(x = Type, y = Fe)) +
+  geom_boxplot(fill="tomato") +
+  geom_text(aes(label = outlier), na.rm = TRUE, hjust = -0.3) +
+  theme_bw()
+
+# Mostrando gráfico de análisis univariado de valores extremos por categoría
+# Componentes quimicos: Na, Mg, Al, Si
+library(ggpubr)
+plot <- ggarrange(p1, p2, p3, p4, ncol = 2, nrow = 2)
+plot <- annotate_figure(
+  plot,
+  top = text_grob("Análisis Univariado de Valores Extremos por categoria", size = 15))
+plot
+
+# Mostrando gráfico de análisis univariado de valores extremos por categoría
+# Componentes quimicos: K, Ca, Ba, Fe
+plot <- ggarrange(p5, p6,p7,p8, ncol = 2, nrow = 4)
+plot <- annotate_figure(
+  plot,
+  top = text_grob("Análisis Univariado de Valores Extremos por categoria", size = 15))
+plot
