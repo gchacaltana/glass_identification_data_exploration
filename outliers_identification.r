@@ -69,3 +69,18 @@ hist(Glass$Al, breaks = "sturges",
      ylab = "Cantidad",
      col="wheat3",
      border="black")
+
+# Analizando la distribución de la variable Silicio
+
+# Resumen de la variable Silicio
+summary(Glass$Si)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 69.81   72.28   72.79   72.65   73.09   75.41
+
+# Visualizamos distribución de la variable silicio
+hist(Glass$Si, breaks = "sturges",
+     main = "Gráfico N°4: Distribución de la variable Silicio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="mistyrose",
+     border="black")
