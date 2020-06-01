@@ -84,3 +84,18 @@ hist(Glass$Si, breaks = "sturges",
      ylab = "Cantidad",
      col="mistyrose",
      border="black")
+
+# Analizando la distribución de la variable Potasio
+
+# Resumen de la variable Potasio
+summary(Glass$K)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.0000  0.1225  0.5550  0.4971  0.6100  6.2100
+
+# Visualizamos distribución de la variable potasio
+hist(Glass$K, breaks = "sturges",
+     main = "Gráfico N°5: Distribución de la variable Potasio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="mediumpurple1",
+     border="black")
