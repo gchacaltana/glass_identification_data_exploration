@@ -22,3 +22,19 @@ str(Glass)
 
 # Resumen de las variables del data frame
 summary(Glass)
+
+# Analizando la distribución de la variable Sodio
+
+# Resumen de la variable Sodio
+summary(Glass$Na)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 10.73   12.91   13.30   13.41   13.82   17.38
+
+# Visualizamos distribución de la variable sodio
+hist(Glass$Na, breaks = "sturges",
+     main = "Gráfico N°1: Distribución de la variable sodio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="plum", 
+     border="black"
+)
