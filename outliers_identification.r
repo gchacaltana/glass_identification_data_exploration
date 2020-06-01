@@ -99,3 +99,18 @@ hist(Glass$K, breaks = "sturges",
      ylab = "Cantidad",
      col="mediumpurple1",
      border="black")
+
+# Analizando la distribución de la variable Calcio
+
+# Resumen de la variable Calcio
+summary(Glass$Ca)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 5.430   8.240   8.600   8.957   9.172  16.190
+
+# Visualizamos distribución de la variable calcio
+hist(Glass$Ca, breaks = "sturges",
+     main = "Gráfico N° 6: Distribución de la variable Calcio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="olivedrab1",
+     border="black")
