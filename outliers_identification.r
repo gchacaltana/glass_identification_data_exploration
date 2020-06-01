@@ -129,3 +129,19 @@ hist(Glass$Ba, breaks = "sturges",
      ylab = "Cantidad",
      col="seagreen1",
      border="black")
+
+
+# Analizando la distribución de la variable Hierro
+
+# Resumen de la variable Hierro
+summary(Glass$Fe)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.00000 0.00000 0.00000 0.05701 0.10000 0.51000
+
+# Visualizamos distribución de la variable Hierro
+hist(Glass$Fe, breaks = "sturges",
+     main = "Gráfico N° 8: Distribución de la variable Hierro",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="tomato",
+     border="black")
