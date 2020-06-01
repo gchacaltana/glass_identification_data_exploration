@@ -54,3 +54,18 @@ hist(Glass$Mg, breaks = "sturges",
      col="springgreen",
      border="black"
 )
+
+# Analizando la distribución de la variable aluminio
+
+# Resumen de la variable aluminio
+summary(Glass$Al)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.290   1.190   1.360   1.445   1.630   3.500
+
+# Visualizamos distribución de la variable aluminio
+hist(Glass$Al, breaks = "sturges",
+     main = "Gráfico N° 3: Distribución de la variable Aluminio",
+     xlab = "Valores",
+     ylab = "Cantidad",
+     col="wheat3",
+     border="black")
